@@ -169,10 +169,13 @@ img{
 
 @media  (min-width: 640px){
 
+    *{
+        transition: all 0.5s ease-out;
+    }
+
     .navbar{
         display: none;
     }
-
 
     .home-container{
         display: grid;
@@ -191,12 +194,10 @@ img{
     .intro-text{
         align-self: flex-start;
         font-size: 2.25rem;
-        transition: all 0.5s ease-out;
     }
     
     .subtitle{
         font-size: 1.75rem;
-        transition: all 0.5s ease-out;
     }
 
     .border-after, 
@@ -224,9 +225,46 @@ img{
     .navlap  a{
         text-decoration: none;
         color: #FFFCFC;
+        margin-right: 1em;
+        font-weight: 300;
+        font-size: 0.75rem;
+        letter-spacing: 0.8px;
+    }
+
+    .navlap .project-btn{
+        background-color: var(--sc-color);
+        padding: 0.75em 1.5em;
+        border-radius: 20px;
+        font-weight: 400;
+        color: #2E3634;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    *{
+        transition: all 0.5s ease-out;
+    }
+
+    .intro-text{
+        align-self: flex-start;
+        font-size: 3rem;
+    }
+
+    .subtitle{
+        font-size: 2.25rem;
+    }
+     .navlap{
+        text-align: right;
+        padding: 1.5em 0;
+    }
+    .navlap  a{
+        text-decoration: none;
+        color: #FFFCFC;
         margin-right: 2em;
         font-weight: 300;
         letter-spacing: 1px;
+        font-size: 1rem;
     }
 
     .navlap .project-btn{
@@ -234,19 +272,6 @@ img{
         padding: 0.75em 2em;
         border-radius: 20px;
         color: #2E3634;
-    }
-}
-
-@media (min-width: 1024px) {
-    .intro-text{
-        align-self: flex-start;
-        font-size: 3rem;
-        transition: all 0.5s ease-out;
-    }
-
-    .subtitle{
-        font-size: 2.25rem;
-        transition: all 0.5s ease-out;
     }
 
 }
