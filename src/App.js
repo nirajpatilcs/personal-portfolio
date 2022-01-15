@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, {useRef, useState } from "react";
 import Home from './components/Home'
 import Skills from "./components/Skills";
 import About from "./components/About";
@@ -7,8 +7,10 @@ function App() {
 
   const nav = useRef(null);
   const sections = ['home', 'skills', 'about']
+  const [displayPage, setDisplayPage] = useState(0);
 
   function changeSideNavFocus(i) {
+    setDisplayPage(i)
     // remove all active classes 
     for(const reference of references) {
       reference.current.classList.remove('sidenav-active')
@@ -26,20 +28,15 @@ function App() {
     )    
   })
 
+ 
 
   return (
     <div className="container">
-      <section id='home'> 
-        <Home/>
-      </section> 
-
-      <section id='skills'> 
-         <Skills/>
-      </section>
-
-      <section id='about'> 
-        <About/>
-      </section>
+      {/* {getMainPage()} */}
+      
+      <section id='home'> <Home/></section>
+      <section id='skills' ><Skills/> </section>
+      <section id='about'><About/> </section>
       
       <nav className="sidenav" ref={nav}> 
         {sideNavItems} 
