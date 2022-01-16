@@ -7,16 +7,13 @@ function App() {
 
   const useSectionOnScreen = (options, id) => {
     const sectionRef = useRef(null)
-    const [isVisible, setIsVisible] = useState(false)
-
     const sectionInView = (entries) => {
       const [entry] = entries
-      setIsVisible(entry.isIntersecting)
-      if(isVisible){
-        changeSideNavFocus(id)
+      if(entry.isIntersecting) {
+          changeSideNavFocus(id)
       } 
     }
-    
+
     useEffect(() => {
       const observer = new IntersectionObserver(sectionInView, options)
       if (sectionRef.current) observer.observe(sectionRef.current)
@@ -47,6 +44,7 @@ function App() {
       references[i].current.classList.add('sidenav-active')
     }
   }
+
 
 
   const sideNavItems = sections.map((section, i) => {
