@@ -57,7 +57,7 @@ function App() {
   const options = {
     root: null, 
     rootMargin: "0px", 
-    threshold: 0.7
+    threshold: 1
   }
   
   const [homeRef] = useSectionOnScreen (options, 0)
