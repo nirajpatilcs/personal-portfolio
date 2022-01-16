@@ -1,9 +1,10 @@
 import React from "react";
+import AnimatedText from "./AnimatedText";
 
 export default function() {
     return (
-        <div className="skills-container"> 
-            <h1 className="skills-title about-title"> About</h1>
+        <div className="info-container"> 
+            <h1 className="info-title about-title"> <AnimatedText str={'ABOUT'}/></h1>
         </div>
     )
 }

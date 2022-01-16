@@ -244,18 +244,17 @@ img{
         skills page 
 =======================*/
 
-
-.skills-container{
+/* .info-container{
     min-height: 100vh;
     display: flex;
     
 }
 
-.skills-title{
+.info-title{
     font-size: 6rem;
     color: #2c2c2c;
     font-family: 'Inter', sans-serif;
-}
+} */
 
 
 
@@ -440,27 +439,27 @@ img{
 
     /* skills  */
 
-    .skills-container{
+    .info-container{
         padding: 2em;
-        align-items: center;
-        position: relative;
+        min-height: 100vh;
+        max-width: 800px;
+        margin: 0 auto; 
+        margin-top: 2em;
     }
 
-    .skills-title{
-        font-size: 18rem;
-        line-height: 0.8;
-    }
 
+    .info-title{
+        font-size: 3rem;
+        font-weight: 400;
+    }
+/* 
     .about-title{
         align-self: flex-start;
-    }
+    } */
 
-    .skills-container > p {
+    .info-container > p {
         /* border: 2px solid white; */
-        max-width: fit-content;
-        margin: 0 auto;
-        text-align: center;
-    }
+        margin: 0 auto;    }
 
     /* .s-b{
         display: block;
