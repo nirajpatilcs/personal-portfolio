@@ -2,6 +2,8 @@ import React, {useEffect, useRef, useState } from "react";
 import Home from './components/Home'
 import Skills from "./components/Skills";
 import About from "./components/About";
+import Projects from "./components/Projects";
+import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
 
@@ -26,7 +28,7 @@ function App() {
     return [sectionRef]
   }
 
-  const sections = ['home', 'skills', 'about']
+  const sections = ['home', 'about', 'skills', 'projects']
   
   // create a reference for each nav item 
   const references = Array(sections.length).fill(0).map(() => React.createRef());
@@ -57,19 +59,21 @@ function App() {
   const options = {
     root: null, 
     rootMargin: "0px", 
-    threshold: 1
+    threshold: 0.7
   }
   
   const [homeRef] = useSectionOnScreen (options, 0)
-  const [skillsRef] = useSectionOnScreen (options, 1)
-  const [aboutRef] = useSectionOnScreen (options, 2)
+  const [skillsRef] = useSectionOnScreen (options, 2)
+  const [aboutRef] = useSectionOnScreen (options, 1)
+  const [projectsRef] = useSectionOnScreen(options, 3)
 
   return (
     <div className="container">
       
       <section id='home' ref={homeRef}> <Home/></section>
-      <section id='skills' ref={skillsRef}><Skills/> </section>
       <section id='about' ref={aboutRef}><About/> </section>
+      <section id='skills' ref={skillsRef}><Skills/> </section>
+      <sections id="projects" ref={projectsRef}><Projects/> </sections>
       
       <nav className="sidenav" > 
         {sideNavItems} 

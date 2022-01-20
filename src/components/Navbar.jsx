@@ -1,13 +1,13 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBars, faTimes} from '@fortawesome/free-solid-svg-icons'
-import Logo from './Logo'
 
 export default function Navbar(props) {
     return (
         <nav className='navbar'> 
 
-            <Logo/>
+            <p className='logo-txt'><span className='intro-text-span'>N</span> &#60;devniraj/&#62;</p> 
+
             { !props.displayItems &&
             <FontAwesomeIcon icon={faBars} onClick={props.toggleNav} className='navicon bars'/>
             }

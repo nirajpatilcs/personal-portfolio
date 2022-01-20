@@ -13,9 +13,8 @@ export default function Home() {
     }
 
     return(
-        <div className='home-container'> 
-           
-            <Navbar toggleNav={toggleNav} displayItems={displayState}/>
+        <div className='home-container'>    
+            <Navbar toggleNav={toggleNav} displayItems={displayState}/> 
 
             {/* main intro text */}
             <div className='intro-text-container'>
@@ -31,13 +30,11 @@ export default function Home() {
                 </div>
                 <div className='border-after'> </div> 
                 <Button str={'Get in touch!'}/>
-                
             </div>
-
-
+            
+            <Navlap/>
             {/* only on large dispays */}
             <div className='home-aside'> 
-                <Navlap/>
                 <img src={logo} alt='logo' className='intro-img'/> 
             </div>
 
