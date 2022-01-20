@@ -114,8 +114,18 @@ img{
     background-color: var(--bg-color);
     width: 100%;
     display: flex;
-    animation: fadeInRight 0.4s forwards ;
+    visibility: hidden;
+    transform: translateX(50%);
+    opacity: 0;
+    transition: all .5s;
 }
+
+.open-nav {
+    visibility: unset;
+    opacity: 1;
+    transform: translateX(0);
+}
+
 
 
 .navitems-list{
@@ -143,6 +153,8 @@ img{
 
 .cross{
     animation: rotateIn 1s forwards;
+    position: fixed;
+    right: 0.8em;
 }
 
 

@@ -17,16 +17,14 @@ export default function Navbar(props) {
             <FontAwesomeIcon icon={faTimes} onClick={props.toggleNav} className='navicon cross'/>
             }
             {/* display when clicked on menubar */}
-            { props.displayItems &&
-                <div className="nav-wrapper" >
-                    <ul className="navitems-list">
-                        <li><a className="active" href="#">Home</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Skills</a></li>
-                        <li><a href="#">About</a></li>
-                    </ul>
-                </div>
-            }   
+            <div className={`nav-wrapper ${props.displayItems && 'open-nav'} `} >
+                <ul className="navitems-list">
+                    <li><a className="active" href="#">Home</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div> 
         </nav>
     )
 }
