@@ -74,6 +74,10 @@ function App() {
       <section id='about' ref={aboutRef}><About/> </section>
       <section id='skills' ref={skillsRef}><Skills/> </section>
       <sections id="projects" ref={projectsRef}><Projects/> </sections>
+      <footer>
+        <div className="footer-tags" >L G </div>
+        <span className='intro-text-span'>N</span> 
+      </footer> 
       
       <nav className="sidenav" > 
         {sideNavItems} 
