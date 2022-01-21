@@ -73,7 +73,7 @@ function App() {
       <section id='home' ref={homeRef}> <Home/></section>
       <section id='about' ref={aboutRef}><About/> </section>
       <section id='skills' ref={skillsRef}><Skills/> </section>
-      <sections id="projects" ref={projectsRef}><Projects/> </sections>
+      <section id="projects" ref={projectsRef}><Projects/> </section>
       <footer>
         <div className="footer-tags" >L G </div>
         <span className='intro-text-span'>N</span> 

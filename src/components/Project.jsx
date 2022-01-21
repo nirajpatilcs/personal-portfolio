@@ -1,9 +1,9 @@
 import React from "react";
 
 export default function Project(props) {
-    const skills = props.project.tech.map(t => {
+    const skills = props.project.tech.map((t,i) => {
         return(
-            <span> {t}</span>
+            <span key={i}> {t}</span>
         )
     })
     return(
