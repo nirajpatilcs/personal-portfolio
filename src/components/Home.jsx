@@ -4,6 +4,8 @@ import logo from './logo.PNG'
 import Navlap from './Navlap'
 import Button from './Button'
 import AnimatedText from './AnimatedText'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faLinkedin, faGithubSquare} from '@fortawesome/free-brands-svg-icons'
 
 export default function Home() {
     const [displayState, setDisplayState] = useState(false)
@@ -29,7 +31,11 @@ export default function Home() {
                     <p className='subtitle'>Frontend Developer</p>
                 </div>
                 <div className='border-after'> </div> 
+
+            <div className="contact-links">
                 <Button str={'Get in touch!'}/>
+                <FontAwesomeIcon  className='contact-btns' icon={faGithubSquare} />
+                <FontAwesomeIcon className='contact-btns' icon={faLinkedin} /> </div>
             </div>
             
             <Navlap/>

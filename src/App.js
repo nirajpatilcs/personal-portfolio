@@ -3,17 +3,23 @@ import Home from './components/Home'
 import Skills from "./components/Skills";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
 
+  
+
   const useSectionOnScreen = (options, id) => {
     const sectionRef = useRef(null)
+    const [isVisible, setIsVisible] = useState(false);
+
     const sectionInView = (entries) => {
       const [entry] = entries
-      if(entry.isIntersecting) {
-          changeSideNavFocus(id)
-      } 
+      if(!entry.isIntersecting) {
+          return;         
+      } else {
+        changeSideNavFocus(id) //change side nav
+        setIsVisible(true);
+      }
     }
 
     useEffect(() => {
@@ -25,7 +31,7 @@ function App() {
       }
     }, [sectionRef, options])
 
-    return [sectionRef]
+    return [sectionRef, isVisible]
   }
 
   const sections = ['home', 'about', 'skills', 'projects']
@@ -47,8 +53,6 @@ function App() {
     }
   }
 
-
-
   const sideNavItems = sections.map((section, i) => {
     return(
       <a key={i} className='sidenav-item' ref={references[i]} onClick={()=>changeSideNavFocus(i)} href={`#${section}`}> </a>
@@ -58,22 +62,22 @@ function App() {
   // -========================= try find better way to implement this ===========================
   const options = {
     root: null, 
-    rootMargin: "0px", 
-    threshold: 0.7
+    rootMargin: "-100px", 
+    threshold: 0.3
   }
   
   const [homeRef] = useSectionOnScreen (options, 0)
-  const [skillsRef] = useSectionOnScreen (options, 2)
-  const [aboutRef] = useSectionOnScreen (options, 1)
-  const [projectsRef] = useSectionOnScreen(options, 3)
+  const [skillsRef, isVisibleSkills] = useSectionOnScreen (options, 2)
+  const [aboutRef, isVisibleAbout] = useSectionOnScreen (options, 1)
+  const [projectsRef, isVisibleProjects] = useSectionOnScreen(options, 3)
 
   return (
     <div className="container">
       
       <section id='home' ref={homeRef}> <Home/></section>
-      <section id='about' ref={aboutRef}><About/> </section>
-      <section id='skills' ref={skillsRef}><Skills/> </section>
-      <section id="projects" ref={projectsRef}><Projects/> </section>
+      <section id='about' className={isVisibleAbout ? "appear" : "not-appear"} ref={aboutRef}><About/> </section>
+      <section id='skills' className={isVisibleSkills ? "appear" : "not-appear"}  ref={skillsRef}><Skills/> </section>
+      <section id="projects" className={isVisibleProjects ? "appear" : "not-appear"}  ref={projectsRef}><Projects/> </section>
       <footer>
         <div className="footer-tags" >L G </div>
         <span className='intro-text-span'>N</span> 
