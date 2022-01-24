@@ -6,11 +6,9 @@ import Projects from "./components/Projects";
 
 function App() {
 
-  
 
   const useSectionOnScreen = (options, id) => {
     const sectionRef = useRef(null)
-    const [isVisible, setIsVisible] = useState(false);
 
     const sectionInView = (entries) => {
       const [entry] = entries
@@ -18,7 +16,6 @@ function App() {
           return;         
       } else {
         changeSideNavFocus(id) //change side nav
-        setIsVisible(true);
       }
     }
 
@@ -31,56 +28,75 @@ function App() {
       }
     }, [sectionRef, options])
 
-    return [sectionRef, isVisible]
+    return [sectionRef]
   }
 
   const sections = ['home', 'about', 'skills', 'projects']
-  
-  // create a reference for each nav item 
+
+   // create a reference for each nav item 
   const references = Array(sections.length).fill(0).map(() => React.createRef());
+  const referencesTopNav = Array(sections.length).fill(0).map(() => React.createRef());
+
+  const navLinks = sections.map((section, i) => {
+    return(
+      <a key={i} href={`#${section}`} ref={referencesTopNav[i]}>{section}</a>
+    )
+  })
+  
 
   function changeSideNavFocus(i) {
     // remove all active classes 
-    for(const reference of references) {
-        //check for null value
-        if(reference.current) {
-          reference.current.classList.remove('sidenav-active') 
-        }
+
+    for(let ref =0; ref< sections.length; ref++) {
+      if(references[ref].current) {
+          references[ref].current.classList.remove('sidenav-active') 
+      }
+      if(referencesTopNav[ref].current){
+          referencesTopNav[ref].current.classList.remove('active-btn') 
+      }
     }
+    
     // add active class to only clicked component  & check for null value 
     if(references[i].current) {
       references[i].current.classList.add('sidenav-active')
+    }
+    if(referencesTopNav[i].current) {
+      referencesTopNav[i].current.classList.add('active-btn')
     }
   }
 
   const sideNavItems = sections.map((section, i) => {
     return(
-      <a key={i} className='sidenav-item' ref={references[i]} onClick={()=>changeSideNavFocus(i)} href={`#${section}`}> </a>
+      <a key={i} className='sidenav-item' ref={references[i]} href={`#${section}`}> </a>
     )    
   })
 
   // -========================= try find better way to implement this ===========================
   const options = {
     root: null, 
-    rootMargin: "-100px", 
-    threshold: 0.3
+    rootMargin: "0px", 
+    threshold: 0.7
   }
   
   const [homeRef] = useSectionOnScreen (options, 0)
-  const [skillsRef, isVisibleSkills] = useSectionOnScreen (options, 2)
-  const [aboutRef, isVisibleAbout] = useSectionOnScreen (options, 1)
-  const [projectsRef, isVisibleProjects] = useSectionOnScreen(options, 3)
+  const [skillsRef] = useSectionOnScreen (options, 2)
+  const [aboutRef] = useSectionOnScreen (options, 1)
+  const [projectsRef] = useSectionOnScreen(options, 3)
+
+  const navFocus = (i) => {
+    console.log(sideNavItems[i].props.className )
+  }
 
   return (
     <div className="container">
       
-      <section id='home' ref={homeRef}> <Home/></section>
-      <section id='about' className={isVisibleAbout ? "appear" : "not-appear"} ref={aboutRef}><About/> </section>
-      <section id='skills' className={isVisibleSkills ? "appear" : "not-appear"}  ref={skillsRef}><Skills/> </section>
-      <section id="projects" className={isVisibleProjects ? "appear" : "not-appear"}  ref={projectsRef}><Projects/> </section>
+      <section id='home' ref={homeRef}> <Home navLinks={navLinks} navFocus={navFocus}/></section>
+      <section id='about' ref={aboutRef}><About/> </section>
+      <section id='skills' ref={skillsRef}><Skills/> </section>
+      <section id="projects" ref={projectsRef}><Projects/> </section>
       <footer>
-        <div className="footer-tags" >L G </div>
         <span className='intro-text-span'>N</span> 
+        <p>&copy;2022 NIRAJ PATIL</p> 
       </footer> 
       
       <nav className="sidenav" > 

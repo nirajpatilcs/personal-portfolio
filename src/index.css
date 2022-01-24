@@ -52,22 +52,54 @@ img{
     max-width: 100%;
 }
 
-.btn{
-    margin-top: 2em;
-    border: 2px solid var(--color-p);
-    width: max-content;
-    border-radius: 20px;
-    padding: 0.75em 4em;
-    background: linear-gradient(to left, var(--bg-color) 50%, var(--color-p) 50%) right;
-    background-size: 200%;
-    transition: 0.2s linear;
+
+button {
+ font-family: inherit;
+ background: var(--color-p);
+ color: var(--text-color);
+ padding: 0.7em 1.25em;
+ padding-left: 0.9em;
+ display: flex;
+ align-items: center;
+ border: none;
+ border-radius: 16px;
+ font-size: 1.1rem;
+ overflow: hidden;
+ transition: all 0.2s;
+}
+
+button span {
+ display: block;
+ margin-left: 0.3em;
+ transition: all 0.3s ease-in-out;
+}
+
+button svg {
+ display: block;
+ transform-origin: center center;
+ transition: transform 0.3s ease-in-out;
+}
+
+button:hover{
     cursor: pointer;
 }
 
-.btn:hover, 
-.btn:focus{
-    background-position: left;
+button:hover .svg-wrapper {
+ animation: fly-1 0.6s ease-in-out infinite alternate;
 }
+
+button:hover svg {
+ transform: translateX(3.5em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+ transform: translateX(200%);
+}
+
+button:active {
+ transform: scale(0.95);
+}
+
 
 /* ====================
         home page
@@ -244,6 +276,13 @@ img{
 
 .contact-links{
     display: flex;
+    margin-top: 1em;
+}
+
+.contact-links a{
+    text-decoration: none;
+    color: inherit;
+    align-self: flex-end;
 }
 
 .contact-btns{
@@ -399,6 +438,10 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 2em;
+    box-shadow: 0px -4px 3px rgba(25,25,25, 0.75);
+    font-size: 0.75rem;
+    color: rgb(146, 146, 146);
 }
 
 
@@ -412,7 +455,15 @@ footer .intro-text-span{
 =============================*/
 
 
+@keyframes fly-1 {
+ from {
+  transform: translateY(0.1em);
+ }
 
+ to {
+  transform: translateY(-0.1em);
+ }
+}
 
 @keyframes fadeInLeft {
   from {
@@ -468,6 +519,9 @@ footer .intro-text-span{
 
 @media  (min-width: 760px){
 
+    #skills .info-container{
+        min-height: 60vh;
+    }
 
     .intro-text-wrapper, 
     .subtitle,
@@ -475,18 +529,6 @@ footer .intro-text-span{
     .logo-txt,
     .project-img{
         transition: all 0.2s ease-out;
-    }
-
-    /* section appear */
-
-    .appear{
-        opacity: 1;
-        transition: transform 1s ease-out;
-    }
-        
-    .not-appear{
-        opacity: 0;
-        transform: translateY(50%);
     }
 
     .container{
@@ -537,9 +579,16 @@ footer .intro-text-span{
         display: flex;
         flex-direction: column;
     }
+    .nav-container{
+        grid-area: nav;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        z-index: 1000;
+    }
 
     .navlap{
-        grid-area: nav;
         display: flex;
         justify-content: space-between;
         padding: 1.5em 0;
@@ -567,10 +616,10 @@ footer .intro-text-span{
         margin:0;
     }
 
-    .navlap .project-btn, 
+    .navlap .active-btn, 
     .logo-txt{
         background-color: var(--color-p);
-        padding: 0.75em 1.5em;
+        padding: 0.75em 1.75em;
         color: var(--text-color);
         font-size: 1rem;
         letter-spacing: 1px;

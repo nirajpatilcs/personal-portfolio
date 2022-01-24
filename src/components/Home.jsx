@@ -7,7 +7,7 @@ import AnimatedText from './AnimatedText'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faLinkedin, faGithubSquare} from '@fortawesome/free-brands-svg-icons'
 
-export default function Home() {
+export default function Home(props) {
     const [displayState, setDisplayState] = useState(false)
 
     function toggleNav() {
@@ -32,13 +32,15 @@ export default function Home() {
                 </div>
                 <div className='border-after'> </div> 
 
-            <div className="contact-links">
-                <Button str={'Get in touch!'}/>
-                <FontAwesomeIcon  className='contact-btns' icon={faGithubSquare} />
-                <FontAwesomeIcon className='contact-btns' icon={faLinkedin} /> </div>
+                <div className="contact-links">
+                    <Button str={'Get in touch!'}/>
+                    <a href="https://github.com/nirajpatilcs" target='_blank'><FontAwesomeIcon  className='contact-btns' icon={faGithubSquare} /> </a>
+                    <a href="https://www.linkedin.com/in/niraj-p/" target='_blank'><FontAwesomeIcon className='contact-btns' icon={faLinkedin} /></a> 
+                </div>
+
             </div>
             
-            <Navlap/>
+            <Navlap navLinks={props.navLinks} navFocus = {props.navFocus}/>
             {/* only on large dispays */}
             <div className='home-aside'> 
                 <img src={logo} alt='logo' className='intro-img'/> 
