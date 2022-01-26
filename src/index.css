@@ -607,6 +607,7 @@ footer .intro-text-span{
         border-top-right-radius: 20px;
     }
 
+
     .navlap .links{
         position: absolute;
         right:0;
@@ -619,7 +620,7 @@ footer .intro-text-span{
     .navlap .active-btn, 
     .logo-txt{
         background-color: var(--color-p);
-        padding: 0.75em 1.75em;
+        padding: 0.75em 3em;
         color: var(--text-color);
         font-size: 1rem;
         letter-spacing: 1px;
