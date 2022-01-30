@@ -46,6 +46,7 @@ body{
 .container{
     max-width: 95%;
     margin: 0 auto;
+   animation: appear 0.5s ease-in forwards;
 }
 
 img{
@@ -99,6 +100,14 @@ button:hover span {
 button:active {
  transform: scale(0.95);
 }
+
+
+/* ===================== 
+        loader 
+   =====================*/
+
+
+
 
 
 /* ====================
@@ -465,6 +474,15 @@ footer .intro-text-span{
  }
 }
 
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 @keyframes fadeInLeft {
   from {
     opacity: 0;
@@ -606,7 +624,6 @@ footer .intro-text-span{
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
     }
-
 
     .navlap .links{
         position: absolute;
@@ -808,3 +825,48 @@ footer .intro-text-span{
         font-size: 3.25rem;
     }
 }
+
+/* ==========loader============= */
+
+.loader-wrapper{
+    background-color: var(--bg-color);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.loader-text{
+    font-size: 5rem;
+    color: var(--color-p);
+    filter: drop-shadow(-5px 1px 0px var(--color-s));
+    font-weight: 700;
+    animation: appear 3s ease-out;
+    position: absolute;
+    display: block;
+    margin: auto;
+    align-self: center;
+    z-index: 1;
+}
+
+polygon {
+  stroke: var(--color-p);
+  stroke-width: 3;
+  stroke-dasharray: 50, 750;
+  stroke-dashoffset: 0;
+  fill: none;
+  animation: border 4.5s ease-in-out forwards;
+}
+
+@keyframes border {
+  to {
+    stroke-dashoffset: -350;
+  }
+}
+

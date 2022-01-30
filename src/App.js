@@ -3,9 +3,11 @@ import Home from './components/Home'
 import Skills from "./components/Skills";
 import About from "./components/About";
 import Projects from "./components/Projects";
+import Loader from "./components/Loader";
 
 function App() {
 
+  const [loaderDone, setLoaderDone] = useState(false)
 
   const useSectionOnScreen = (options, id) => {
     const sectionRef = useRef(null)
@@ -39,7 +41,7 @@ function App() {
 
   const navLinks = sections.map((section, i) => {
     return(
-      <a key={i} href={`#${section}`} ref={referencesTopNav[i]}>{section}</a>
+      <a className="nav-links" key={i} href={`#${section}`} ref={referencesTopNav[i]}>{section}</a>
     )
   })
   
@@ -87,22 +89,35 @@ function App() {
     console.log(sideNavItems[i].props.className )
   }
 
+  const loadingDone = () => {
+    setLoaderDone(true);
+  }
+
   return (
-    <div className="container">
+    <>
+      {
+        loaderDone ? (
+          <div className="container">   
+            <section id='home' ref={homeRef}> <Home navLinks={navLinks} navFocus={navFocus}/></section>
+            <section id='about' ref={aboutRef}><About/> </section>
+            <section id='skills' ref={skillsRef}><Skills/> </section>
+            <section id="projects" ref={projectsRef}><Projects/> </section>
+            <footer>
+              <span className='intro-text-span'>N</span> 
+              <p>&copy;2022 NIRAJ PATIL</p> 
+            </footer> 
+            
+            <nav className="sidenav" > 
+              {sideNavItems} 
+            </nav>
+          </div>
+        ) : (
+          <Loader loadingDone={loadingDone}/>
+        )
+      }
       
-      <section id='home' ref={homeRef}> <Home navLinks={navLinks} navFocus={navFocus}/></section>
-      <section id='about' ref={aboutRef}><About/> </section>
-      <section id='skills' ref={skillsRef}><Skills/> </section>
-      <section id="projects" ref={projectsRef}><Projects/> </section>
-      <footer>
-        <span className='intro-text-span'>N</span> 
-        <p>&copy;2022 NIRAJ PATIL</p> 
-      </footer> 
-      
-      <nav className="sidenav" > 
-        {sideNavItems} 
-      </nav>
-    </div>
+    </>
+
     
   );
 }
