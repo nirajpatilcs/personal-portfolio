@@ -3,7 +3,7 @@ import React from 'react'
 export default function Button(props) {
     return(
 
-        <button class="cta">
+        <button className="cta">
             <span>{props.str}</span>
             <svg width="15px" height="10px" viewBox="0 0 13 10">
                 <path d="M1,5 L11,5"></path>

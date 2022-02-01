@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 export default function Loader(props){
 
     useEffect(() => {
-        setTimeout(props.loadingDone, 5000)
+        setTimeout(props.loadingDone, 4000)
     }, [])
 
     return (

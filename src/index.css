@@ -380,6 +380,37 @@ img{
 }
 
 
+.my-photo img{
+    border-radius: 10px;
+    position: relative;
+    max-width: 250px;
+    height: 250px;
+}
+
+.my-photo{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+
+.my-photo::before{
+    content: '';
+    width: 250px;
+    height: 250px;
+    background: repeating-linear-gradient( 45deg, var(--color-p), var(--color-s));
+    background-size: 800% 800%;
+    -webkit-background-clip: image;
+    animation: animateText 2s infinite;
+    transition: background ease-out 0s;
+    border-radius: 20px;
+    right: 1%;
+    top: 4%;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+}
+
 .projects-container{
     display: flex;
     flex-wrap: wrap;
@@ -618,6 +649,7 @@ footer .intro-text-span{
         width: 100%;
         background-color: var(--bg-color);
         z-index: 1000;
+        /* padding: 1em 0; */
     }
 
     .navlap{
@@ -633,8 +665,8 @@ footer .intro-text-span{
         color: var(--text-color);
         margin-right: 2em;
         font-weight: 300;
-        font-size: 1rem;
-        letter-spacing: 0.8px;
+        font-size: 1.25rem;
+        letter-spacing: 2px;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
     }
@@ -642,6 +674,7 @@ footer .intro-text-span{
     .navlap .links{
         position: absolute;
         right:0;
+        text-transform: uppercase;
     }
 
     .logo-txt .intro-text-span {
@@ -654,7 +687,7 @@ footer .intro-text-span{
         padding: 0.75em 3em;
         color: var(--text-color);
         font-size: 1rem;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
     }
 
     .logo-txt{
@@ -699,6 +732,25 @@ footer .intro-text-span{
         right: 5%;
     }
 
+    .my-photo:not(:hover){
+        transition: all ease-in 0.25s;
+    }
+
+    .my-photo:hover{
+        transform: scale3d(1.1, 1.1, 1.1);
+        transition: transform 0.25s ease-in ;
+        filter: drop-shadow(0 0 10px #fff);
+        
+    }
+
+    .my-photo:hover::before{
+        opacity: 1;
+        filter: blur(5px);
+        transition: all 0.25s ease-in;
+        visibility: visible;
+    }
+
+
     .info-title{
         grid-area: header;
         font-size: 5rem;
@@ -729,6 +781,7 @@ footer .intro-text-span{
         max-width: 50%;
         justify-self: center;
     }
+
     .about-tr, .about-tl, .skills-text {
         font-family: var(--text-font-s);
         font-weight: 300;
@@ -812,7 +865,8 @@ footer .intro-text-span{
 
 @media (min-width: 1024px) {
     .intro-text-wrapper{
-        font-size: 3rem;
+        font-size: 3.75rem;
+        line-height: 0.9;
     }
 
     .subtitle{
@@ -821,6 +875,21 @@ footer .intro-text-span{
     .navlap{
         padding: 1.5em 0;
     }
+
+    .info-title{
+        font-size: 6rem;
+    }
+
+    .about-wrapper{
+        font-size: 1.25rem;
+        max-width: 1000px;
+    }
+
+    .skills-wrapper{
+        font-size: 1.25rem;
+        max-width: 900px;
+    }
+
 
     .navlap .project-btn,
     .navlap .logo-txt{
@@ -832,7 +901,7 @@ footer .intro-text-span{
 @media (min-width: 1440px) {
 
     .intro-text-wrapper{
-        font-size: 4rem;
+        font-size: 5rem;
     }
 
     .subtitle{
