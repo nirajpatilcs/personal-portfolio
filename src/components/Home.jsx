@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Navbar from './Navbar'
-import logo from './logo.PNG'
 import Navlap from './Navlap'
 import Button from './Button'
 import AnimatedText from './AnimatedText'
