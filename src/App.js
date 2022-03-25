@@ -4,6 +4,7 @@ import Skills from "./components/Skills";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Loader from "./components/Loader";
+import Navbar from "./components/Navbar";
 
 function App() {
 
@@ -98,6 +99,7 @@ function App() {
       {
         loaderDone ? (
           <div className="container">   
+            <Navbar navLinks={navLinks}/> 
             <section id='home' ref={homeRef}> <Home navLinks={navLinks} navFocus={navFocus}/></section>
             <section id='about' ref={aboutRef}><About/> </section>
             <section id='skills' ref={skillsRef}><Skills/> </section>

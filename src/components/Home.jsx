@@ -23,8 +23,8 @@ export default function Home(props) {
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: true,
-                points: 6.00,
-                spacing: 12.00,
+                points: 5.00,
+                spacing: 17.00,
                 maxDistance: 26.00
 
             }))
@@ -37,9 +37,7 @@ export default function Home(props) {
 
 
     return(
-            <div className='home-container' ref={backgroundRef}>    
-                <Navbar navLinks={props.navLinks}/> 
-
+            <div className='home-container' >    
                 {/* main intro text */}
                 <div className='intro-text-container'>
                     <div className='border-before'> </div> 
@@ -53,7 +51,7 @@ export default function Home(props) {
                         <h1> I'm 
                         <span className='intro-text-span'> N</span>
                         iraj,</h1>
-                        <p className='subtitle'>Frontend Developer</p>
+                        <p className='subtitle'>Software Engineer</p>
                     </div>
                     <div className='border-after'> </div> 
 
@@ -67,9 +65,8 @@ export default function Home(props) {
                 
                 {/* <Navlap navLinks={props.navLinks} navFocus = {props.navFocus}/> */}
                 {/* only on large dispays */}
-                {/* <div className='home-aside'> 
-                    <img src={logo} alt='logo' className='intro-img'/> 
-                </div> */}
+                <div className='home-aside' ref={backgroundRef} > 
+                </div>
 
             </div> 
             
