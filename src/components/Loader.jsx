@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 
 export default function Loader(props){
 
-    useEffect(() => {
-        setTimeout(props.loadingDone, 4000)
-    }, [])
+    // useEffect(() => {
+    //     setTimeout(props.loadingDone, 4000)
+    // }, [])
 
     return (
         <div className="loader-wrapper">

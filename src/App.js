@@ -7,7 +7,7 @@ import Loader from "./components/Loader";
 
 function App() {
 
-  const [loaderDone, setLoaderDone] = useState(false)
+  const [loaderDone, setLoaderDone] = useState(true)
 
   const useSectionOnScreen = (options, id) => {
     const sectionRef = useRef(null)
