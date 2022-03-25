@@ -30,7 +30,7 @@ html{
 }
 
 
-h1,p,h3{
+h1,p,h3, a{
     margin: 0;
     padding: 0;
 }
@@ -46,7 +46,7 @@ body{
 .container{
     max-width: 95%;
     margin: 0 auto;
-   animation: appear 0.5s ease-in forwards;
+    animation: appear 0.5s ease-in forwards;
 }
 
 img{
@@ -116,12 +116,6 @@ img{
 }
 
 
-/* ===================== 
-        loader 
-   =====================*/
-
-
-
 
 
 /* ====================
@@ -132,99 +126,36 @@ img{
 
 .logo-txt .intro-text-span{
     font-weight: 700;
-    margin-left: 2em;
     font-family: var(--text-font-p);
 }
 
 .navbar{
-    width: 100%; 
-    display: flex;
+    display: none;
+    width: 100%;
     justify-content: space-between;
+    grid-area: nav;
     align-items: center;
-    padding: 1em 0;
 }
 
-.navbar-logo {
-    display: flex;
-    align-items: center;
-    margin-left: 1em;
+
+.logo-txt{
+    background-color: #4D4D4D;
+    width: max-content;
+    padding: 0.5em 1em;
+    margin: 1em 0.5em;
+
+    border-radius: 5px;
+    letter-spacing: 1px;
+    color: var(--text-color-p);
 }
 
-.navbar-logo > p{
-    font-size: 1.125rem;
-    font-style: italic;
-}
 
 .logo-img{
     width: 4rem;
     object-fit: cover;
 }
 
-.navicon{
-    color: var(--color-p);
-    font-size: 2rem; 
-    margin-right: 1em; 
-    cursor: pointer;
-    z-index: 2;
-}
 
-.nav-wrapper{
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    min-height: 100vh;
-    background-color: var(--bg-color);
-    width: 100%;
-    display: flex;
-    visibility: hidden;
-    transform: translateX(50%);
-    opacity: 0;
-    transition: all .5s;
-}
-
-.open-nav {
-    visibility: unset;
-    opacity: 1;
-    transform: translateX(0);
-}
-
-
-
-.navitems-list{
-    list-style: none;
-    margin: auto;
-    padding: 0;
-    border: 2px solid var(--color-p);
-}
-
-.navitems-list li {
-    margin: 2em;
-    padding: 0.5em;
-    text-align: center;
-}
-
-.navitems-list li .active {
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid var(--text-color) ;
-}
-
-.navitems-list  li  a{
-    text-decoration: none;
-    color: var(--text-color);
-}
-
-.cross{
-    animation: rotateIn 1s forwards;
-    position: fixed;
-    right: 0.8em;
-}
-
-
-/* sidenav */
-.navlap{
-    display: none;
-}
 
 /* ============ navbar ============= */
 
@@ -597,90 +528,15 @@ footer .intro-text-span{
     }
 
     .container{
-        max-width: 100%;
-    }
-
-    .navbar{
-        display: none;
-        
-    }
-    .navicon, .cross{
-        display: none;
-    }
-
-    .nav-wrapper{
-        visibility: unset;
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    .navbar{
-        width: 100%; 
-        display: flex;
-        padding: 1em 0;
-        background-color: transparent;
-    }
-
-    .navbar-logo {
-        display: flex;
-        align-items: center;
-        margin-left: 1em;
-    }
-
-    .navbar-logo > p{
-        font-size: 1.125rem;
-        font-style: italic;
+        max-width: 90%;
+        margin: 0 auto;
     }
 
     .logo-img{
         width: 4rem;
         object-fit: cover;
+        position: relative;
     }
-
-    .navicon{
-        color: var(--color-p);
-        font-size: 2rem; 
-        margin-right: 1em; 
-        cursor: pointer;
-        z-index: 2;
-    }
-
-    .nav-wrapper{
-        /* min-height: 100vh; */
-        background-color: transparent;
-        width: 100%;
-        min-height: min-content;
-        display: flex;
-        /* flex-direction: column; */
-        justify-content: flex-end;
-        transition: all .5s;
-    }
-
-    .navitems-list{
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        border: none;
-    }
-
-    .navitems-list li {
-        /* margin: 2em; */
-        padding: 0 0.5em;
-        text-align: center;
-    }
-
-    .navitems-list li .active {
-        padding-bottom: 0.5em;
-        border-bottom: 1px solid var(--text-color) ;
-    }
-
-    .navitems-list  li  a{
-        text-decoration: none;
-        color: var(--text-color);
-    }
-
-
 
     .home-container{
         display: grid;
@@ -688,8 +544,40 @@ footer .intro-text-span{
         grid-template-columns: 3fr 2fr;
         grid-template-areas: 
             "nav nav"
-            "intro logo ";
+            "intro _ ";
     }
+
+    /* navbar */
+
+    .navbar{
+        display: flex;
+        margin-right: 1em;
+    }
+
+    .links{
+        width: 100%;
+    }
+
+    .nav-wrapper{
+        display: flex;
+        padding: 0 2em;
+    }
+
+    .logo-txt, .nav-links{
+        font-size: 1.25rem;
+    }
+
+    .nav-links{
+        margin: 0 1em;
+        text-decoration: none;
+        color: var(--text-color-p);
+    }
+
+    .active-btn{
+        padding: 0.5em 0;
+        border-bottom: 2px solid var(--color-p);
+    }
+
 
     .intro-text-container{
         grid-area: intro;
@@ -712,69 +600,20 @@ footer .intro-text-span{
         display: none;
     }
 
-    .intro-img{
-        max-width: 80%;
-        margin:auto;
-    }
-
-    .home-aside{
-        grid-area: logo;
-        display: flex;
-        flex-direction: column;
-    }
-    .nav-container{
-        grid-area: nav;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: var(--bg-color);
-        z-index: 1000;
-        /* padding: 1em 0; */
-    }
-
-    .navlap{
-        display: flex;
-        justify-content: space-between;
-        padding: 1.5em 0;
-        position: relative;
-        border-bottom: 10px solid var(--color-p);
-    }
-    .navlap  a,
-    .logo-txt{
-        text-decoration: none;
-        color: var(--text-color);
-        margin-right: 2em;
-        font-weight: 300;
-        font-size: 1.25rem;
-        letter-spacing: 2px;
-        border-radius: 10px; 
-    }
-
-    .navlap .links{
-        position: absolute;
-        right:0;
-        text-transform: uppercase;
-    }
-
     .logo-txt .intro-text-span {
         margin:0;
     }
 
-    .navlap .active-btn, 
+    /* .navlap .active-btn, 
     .logo-txt{
         background-color: var(--color-p);
-        padding: 0.75em 3em;
+        padding: 0.5em 2em;
         color: var(--text-color);
-        font-size: 1rem;
+        font-size: 2rem;
         letter-spacing: 2px;
-    }
+    } */
 
-    .logo-txt{
-        /* position: absolute;
-        bottom: 0; */
-        margin-left: 1em;
-        background-color: #4D4D4D;
-    }
+
 
     .info-container{
         display: flex;
@@ -951,8 +790,9 @@ footer .intro-text-span{
     .subtitle{
         font-size: 2.25rem;
     }
-    .navlap{
-        padding: 1.5em 0;
+
+    .logo-txt, .nav-links{
+        font-size: 1.75rem;
     }
 
     .info-title{
@@ -981,6 +821,10 @@ footer .intro-text-span{
 
     .intro-text-wrapper{
         font-size: 5rem;
+    }
+
+    .logo-txt, .nav-links{
+        font-size: 2rem;
     }
 
     .subtitle{

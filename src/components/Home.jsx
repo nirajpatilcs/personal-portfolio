@@ -10,7 +10,6 @@ import NET from 'vanta/dist/vanta.net.min.js'
 import * as THREE from 'three'
 
 export default function Home(props) {
-    const [displayState, setDisplayState] = useState(false)
     const [loaderDone, setLoader] = useState(true)
     const [vantaEffect, setVantaEffect] = useState(0)
     const backgroundRef = useRef(null)
@@ -24,6 +23,9 @@ export default function Home(props) {
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: true,
+                points: 6.00,
+                spacing: 12.00,
+                maxDistance: 26.00
 
             }))
         }
@@ -33,13 +35,10 @@ export default function Home(props) {
     }, [vantaEffect])
 
 
-    function toggleNav() {
-        setDisplayState(prev=>!prev)
-    }
 
     return(
             <div className='home-container' ref={backgroundRef}>    
-                <Navbar toggleNav={toggleNav} displayItems={displayState} navLinks={props.navLinks}/> 
+                <Navbar navLinks={props.navLinks}/> 
 
                 {/* main intro text */}
                 <div className='intro-text-container'>
@@ -73,5 +72,6 @@ export default function Home(props) {
                 </div> */}
 
             </div> 
+            
     )
 }

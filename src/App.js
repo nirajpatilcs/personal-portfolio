@@ -106,10 +106,10 @@ function App() {
               <span className='intro-text-span'>N</span> 
               <p>&copy;2022 NIRAJ PATIL</p> 
             </footer> 
-            
+{/*             
             <nav className="sidenav" > 
               {sideNavItems} 
-            </nav>
+            </nav> */}
           </div>
         ) : (
           <Loader loadingDone={loadingDone}/>
