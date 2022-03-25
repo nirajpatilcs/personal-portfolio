@@ -17,13 +17,21 @@ export default function Navbar(props) {
             <FontAwesomeIcon icon={faTimes} onClick={props.toggleNav} className='navicon cross'/>
             }
             {/* display when clicked on menubar */}
+            
             <div className={`nav-wrapper ${props.displayItems && 'open-nav'} `} >
-                <ul className="navitems-list">
+                {/* <p className='logo-txt'><span className='intro-text-span'>N</span> &#60;devniraj/&#62;</p>  */}
+                {/* <ul className="navitems-list">
                     <li onClick={props.toggleNav}><a className="active" href="#home">Home</a></li>
                     <li onClick={props.toggleNav}><a href="#about">About</a></li>
                     <li onClick={props.toggleNav}><a href="#skills">Skills</a></li>
                     <li onClick={props.toggleNav}><a href="#projects">Projects</a></li>   
-                </ul>
+                </ul> */}
+                <div className='navlap'>
+                    
+                    <div className='links'>
+                        {props.navLinks}
+                    </div>
+                </div>
             </div> 
         </nav>
     )

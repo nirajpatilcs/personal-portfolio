@@ -17,7 +17,7 @@ export default function Home(props) {
 
     return(
             <div className='home-container'>    
-                <Navbar toggleNav={toggleNav} displayItems={displayState}/> 
+                <Navbar toggleNav={toggleNav} displayItems={displayState} navLinks={props.navLinks}/> 
 
                 {/* main intro text */}
                 <div className='intro-text-container'>
@@ -27,8 +27,6 @@ export default function Home(props) {
                         <h1> <AnimatedText str={"I'm "}/>
                         <span className='intro-text-span'>N</span>
                         <AnimatedText str={'iraj,'}></AnimatedText> </h1>
-                        {/* <h1 className=''>hello world, </h1> */}
-                        {/* <h1 className=''> I'm  <span className='intro-text-span'>N</span>iraj, </h1> */}
                         <p className='subtitle'>Frontend Developer</p>
                     </div>
                     <div className='border-after'> </div> 
@@ -41,7 +39,7 @@ export default function Home(props) {
 
                 </div>
                 
-                <Navlap navLinks={props.navLinks} navFocus = {props.navFocus}/>
+                {/* <Navlap navLinks={props.navLinks} navFocus = {props.navFocus}/> */}
                 {/* only on large dispays */}
                 <div className='home-aside'> 
                     <img src={logo} alt='logo' className='intro-img'/> 

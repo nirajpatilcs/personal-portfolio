@@ -600,7 +600,85 @@ footer .intro-text-span{
 
     .navbar{
         display: none;
+        
     }
+    .navicon, .cross{
+        display: none;
+    }
+
+    .nav-wrapper{
+        visibility: unset;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .navbar{
+        width: 100%; 
+        display: flex;
+        padding: 1em 0;
+        background-color: transparent;
+    }
+
+    .navbar-logo {
+        display: flex;
+        align-items: center;
+        margin-left: 1em;
+    }
+
+    .navbar-logo > p{
+        font-size: 1.125rem;
+        font-style: italic;
+    }
+
+    .logo-img{
+        width: 4rem;
+        object-fit: cover;
+    }
+
+    .navicon{
+        color: var(--color-p);
+        font-size: 2rem; 
+        margin-right: 1em; 
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .nav-wrapper{
+        /* min-height: 100vh; */
+        background-color: transparent;
+        width: 100%;
+        min-height: min-content;
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: flex-end;
+        transition: all .5s;
+    }
+
+    .navitems-list{
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .navitems-list li {
+        /* margin: 2em; */
+        padding: 0 0.5em;
+        text-align: center;
+    }
+
+    .navitems-list li .active {
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid var(--text-color) ;
+    }
+
+    .navitems-list  li  a{
+        text-decoration: none;
+        color: var(--text-color);
+    }
+
+
 
     .home-container{
         display: grid;
@@ -667,8 +745,7 @@ footer .intro-text-span{
         font-weight: 300;
         font-size: 1.25rem;
         letter-spacing: 2px;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
+        border-radius: 10px; 
     }
 
     .navlap .links{
@@ -691,8 +768,8 @@ footer .intro-text-span{
     }
 
     .logo-txt{
-        position: absolute;
-        bottom: 0;
+        /* position: absolute;
+        bottom: 0; */
         margin-left: 1em;
         background-color: #4D4D4D;
     }
