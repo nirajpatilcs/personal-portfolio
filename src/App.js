@@ -34,7 +34,7 @@ function App() {
     return [sectionRef]
   }
 
-  const sections = ['home', 'about', 'skills', 'projects']
+  const sections = ['home', 'about', 'projects']
 
    // create a reference for each nav item 
   const references = Array(sections.length).fill(0).map(() => React.createRef());
@@ -82,9 +82,9 @@ function App() {
   }
   
   const [homeRef] = useSectionOnScreen (options, 0)
-  const [skillsRef] = useSectionOnScreen (options, 2)
+  // const [skillsRef] = useSectionOnScreen (options, 2)
   const [aboutRef] = useSectionOnScreen (options, 1)
-  const [projectsRef] = useSectionOnScreen(options, 3)
+  const [projectsRef] = useSectionOnScreen(options, 2)
 
   const navFocus = (i) => {
     console.log(sideNavItems[i].props.className )
@@ -95,14 +95,12 @@ function App() {
   }
 
   return (
-    <>
-      {
-        loaderDone ? (
+
           <div className="container">   
             <Navbar navLinks={navLinks}/> 
             <section id='home' ref={homeRef}> <Home navLinks={navLinks} navFocus={navFocus}/></section>
             <section id='about' ref={aboutRef}><About/> </section>
-            <section id='skills' ref={skillsRef}><Skills/> </section>
+            {/* <section id='skills' ref={skillsRef}><Skills/> </section> */}
             <section id="projects" ref={projectsRef}><Projects/> </section>
             <footer>
               <span className='intro-text-span'>N</span> 
@@ -113,15 +111,8 @@ function App() {
               {sideNavItems} 
             </nav> */}
           </div>
-        ) : (
-          <Loader loadingDone={loadingDone}/>
-        )
-      }
-      
-    </>
-
+        ) 
     
-  );
 }
 
 export default App;

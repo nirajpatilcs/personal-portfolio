@@ -24,7 +24,8 @@ export default function Home(props) {
                 gyroControls: true,
                 points: 5.00,
                 spacing: 17.00,
-                maxDistance: 26.00
+                maxDistance: 26.00,
+                color: "#FD2155"
 
             }))
         }
