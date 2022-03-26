@@ -18,14 +18,15 @@ export default function Home(props) {
             setVantaEffect(NET({
                 el: backgroundRef.current,
                 THREE: THREE, 
-                backgroundColor:"#1D1D1D", 
+                // backgroundColor:"#1D1D1D", 
+                backgroundColor: "#1D1D1D",
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: true,
                 points: 5.00,
                 spacing: 17.00,
                 maxDistance: 26.00,
-                color: "#FD2155"
+                color: "rgb(5,253,216)"
 
             }))
         }

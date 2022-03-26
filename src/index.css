@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;700&family=Karla:wght@300;500&display=swap');
 
 :root{
-    --color-p: #4870FF;
+    --color-p: #05FDD8;
     --color-s: #FD2155;
     --bg-color: #1D1D1D;
 
-    --text-color: #FFFFFF;
-    --text-color-p: rgba(196, 196, 196, 0.98);
+    --text-color: #fff;
+    /* --text-color-p: rgba(196, 196, 196, 0.98); */
+    --text-color-p:#fff ;
     --text-font-p: 'Inconsolata', monospace;
     --text-font-s: 'Karla', sans-serif;
 }
@@ -617,10 +618,11 @@ footer .intro-text-span{
         margin: 0 1em;
         text-decoration: none;
         color: var(--text-color-p);
+        position: relative;
+        padding-bottom: 0.5em;
     }
-
+    
     .active-btn{
-        padding: 0.5em 0;
         border-bottom: 2px solid var(--color-p);
     }
 
