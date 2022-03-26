@@ -619,13 +619,37 @@ footer .intro-text-span{
         text-decoration: none;
         color: var(--text-color-p);
         position: relative;
-        padding-bottom: 0.5em;
+        padding-bottom: 0.35em;
     }
-    
+
     .active-btn{
         border-bottom: 2px solid var(--color-p);
     }
 
+    .nav-links,
+    .nav-links:after,
+    .nav-links:before {
+        transition: all .25s;
+    }
+
+    .nav-links:hover {
+        color: #555;
+    }
+
+    .navlinks::after{
+        content: " ";
+        border-bottom: 2px solid red;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        color: var(--color-p);
+        background: var(--color-p);
+        height: 1px;
+    }
+
+    .nav-links:hover:after {
+        width: 100%;
+    }
 
     .intro-text-container{
         grid-column: 1/3;
