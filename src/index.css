@@ -27,7 +27,13 @@ html{
 /* scroll bar */
 
 ::-webkit-scrollbar {
-  display: none;
+  width: 8px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #4D4D4D;
+  border-radius: 20px;
 }
 
 
@@ -316,36 +322,7 @@ img{
 }
 
 
-.my-photo img{
-    border-radius: 10px;
-    position: relative;
-    max-width: 250px;
-    height: 250px;
-}
 
-.my-photo{
-    display: flex;
-    justify-content: center;
-    margin-top: 2em;
-}
-
-
-.my-photo::before{
-    content: '';
-    width: 250px;
-    height: 250px;
-    background: repeating-linear-gradient( 45deg, var(--color-p), var(--color-s));
-    background-size: 800% 800%;
-    -webkit-background-clip: image;
-    animation: animateText 2s infinite;
-    transition: background ease-out 0s;
-    border-radius: 20px;
-    right: 1%;
-    top: 4%;
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
-}
 
 .projects-wrapper{
     margin: 3em auto;
@@ -381,6 +358,7 @@ img{
     width: 100%;
     max-width: 600px;
     object-fit: cover;  
+    border-radius: 8px;
 }
 
 
@@ -723,9 +701,9 @@ footer .intro-text-span{
        content: "";
        display: block;
        position: absolute;
-       right: -90%;
+       right: -80%;
         top: 50%;
-       width: 300px;
+       width: 250px;
        height: 1px;
        margin-left: 1em;
        background-color: #4D4D4D;
@@ -742,6 +720,7 @@ footer .intro-text-span{
         display: grid;
         font-weight: 300;
         background-size: cover ;
+        position: relative;
         align-items: stretch;
         grid-gap: 1em 2em;
         font-family: var(--text-font-s);
@@ -752,9 +731,28 @@ footer .intro-text-span{
             "img text"
             "tags text";
     }
+
+    .project-overlay{
+        grid-area: img;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.5;
+        background-color: #1d1d1d;
+        transition: .25s ease-in;
+        width: 100%;
+        height: 100%;
+    }
+
     
-    .project-card:hover{
+    .project-img:hover, .project-overlay{
         cursor: pointer;
+    }
+
+    .project-overlay:hover{
+        opacity: 0;
     }
 
     .project-title{
