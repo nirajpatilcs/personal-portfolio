@@ -25,7 +25,8 @@ export default function Home(props) {
                 points: 6.00,
                 spacing: 25.00,
                 maxDistance: 25.00,
-                color: "rgb(5,253,216)"
+                // color: "rgb(5,253,216)"
+                color: "#ff8820"
 
             }))
         }
