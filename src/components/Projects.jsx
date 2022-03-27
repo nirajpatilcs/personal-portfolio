@@ -14,7 +14,7 @@ export default function Projects() {
     return(
         <div className="info-container">
             <div className="projects-wrapper">
-                <h1 className="info-title projects-title"><AnimatedText str={'Projects'}/></h1>
+                <h1 className="projects-title"><AnimatedText str={"Some Projects I've Done"}/></h1>
                 <div className="projects-container">
                     {displayProjects}
                 </div>
