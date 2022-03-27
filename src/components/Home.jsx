@@ -22,9 +22,9 @@ export default function Home(props) {
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: true,
-                points: 4.00,
-                spacing: 15.00,
-                maxDistance: 26.00,
+                points: 6.00,
+                spacing: 25.00,
+                maxDistance: 25.00,
                 color: "rgb(5,253,216)"
 
             }))
@@ -37,7 +37,7 @@ export default function Home(props) {
 
 
     return(
-            <div className='home-container' >    
+            <div className='home-container' ref={backgroundRef} >    
                 {/* main intro text */}
                 <div className='intro-text-container'>
                     <div className='border-before'> </div> 
@@ -65,8 +65,8 @@ export default function Home(props) {
                 
                 {/* <Navlap navLinks={props.navLinks} navFocus = {props.navFocus}/> */}
                 {/* only on large dispays */}
-                <div className='home-aside' ref={backgroundRef} > 
-                </div>
+                {/* <div className='home-aside'  > 
+                </div> */}
 
             </div> 
             

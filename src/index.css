@@ -202,6 +202,7 @@ img{
     font-weight: 700;
     font-size: 1.75rem;
     line-height: 1.1;
+    margin-left: 20%;
 }
 
 .intro-text:hover, 
@@ -240,6 +241,7 @@ img{
 .contact-links{
     display: flex;
     margin-top: 1em;
+    margin-left: 20%;
 }
 
 .contact-links a{
@@ -507,14 +509,14 @@ footer .intro-text-span{
         position: relative;
     }
 
-    .home-container{
+    /* .home-container{
         display: grid;
         grid-template-rows: min-content auto;
         grid-template-columns: 2fr 2fr 3fr;
         grid-template-areas:
             "nav nav nav"
             "intro aside aside";
-    }
+    } */
 
     /* navbar */
 
