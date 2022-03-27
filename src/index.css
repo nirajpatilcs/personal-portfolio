@@ -2,7 +2,7 @@
 
 :root{
     --color-p: #ff8820;
-    --color-s: #FD2155;
+    --color-s: #FD2121;
     --bg-color: #1D1D1D;
 
     --text-color: #fff;
@@ -388,7 +388,7 @@ img{
 .project-tags{
     display: none;
     grid-area: tags;
-    color: var(--color-s);
+    color: var(--color-p);
     display: flex;
     justify-content: space-evenly;
     text-transform: uppercase;
