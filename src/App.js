@@ -34,7 +34,7 @@ function App() {
     return [sectionRef]
   }
 
-  const sections = ['home', 'about', 'projects']
+  const sections = ['home', 'projects', 'about']
 
    // create a reference for each nav item 
   const references = Array(sections.length).fill(0).map(() => React.createRef());
@@ -83,8 +83,9 @@ function App() {
   
   const [homeRef] = useSectionOnScreen (options, 0)
   // const [skillsRef] = useSectionOnScreen (options, 2)
-  const [aboutRef] = useSectionOnScreen (options, 1)
-  const [projectsRef] = useSectionOnScreen(options, 2)
+  const [projectsRef] = useSectionOnScreen(options, 1)
+  const [aboutRef] = useSectionOnScreen (options, 2)
+  
 
   const navFocus = (i) => {
     console.log(sideNavItems[i].props.className )
@@ -99,9 +100,9 @@ function App() {
           <div className="container">   
             <Navbar navLinks={navLinks}/> 
             <section id='home' ref={homeRef}> <Home navLinks={navLinks} navFocus={navFocus}/></section>
-            <section id='about' ref={aboutRef}><About/> </section>
             {/* <section id='skills' ref={skillsRef}><Skills/> </section> */}
             <section id="projects" ref={projectsRef}><Projects/> </section>
+            <section id='about' ref={aboutRef}><About/> </section>
             <footer>
               <span className='intro-text-span'>N</span> 
               <p>&copy;2022 NIRAJ PATIL</p> 

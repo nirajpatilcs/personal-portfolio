@@ -2,14 +2,14 @@ const projects = [
 {
     id: 1, 
     title: 'Personal Portfolio', 
-    summary: 'this website fully made by me', 
-    tech: ['css', 'html', 'react js', 'restful apis']
+    summary: 'Developed and hosted e-portfolio to showcase my skills and projects using BEM best practices', 
+    tech: ['css', 'html', 'react js']
 },
 {
     id: 2, 
     title: 'Ken Yakitori Website ',
-    summary: 'freelance restaurant website',
-    tech: ['css', 'java script', 'html']
+    summary: 'Developed a custom responsive website based on client specification. Performed testing on different browsers and devices to ensure the content has no bugs',
+    tech: ['css', 'html', 'react js']
 }
 ]
 

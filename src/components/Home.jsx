@@ -18,7 +18,7 @@ export default function Home(props) {
             setVantaEffect(NET({
                 el: backgroundRef.current,
                 THREE: THREE, 
-                backgroundColor: "#1D1D1D",
+                backgroundColor: "#222222",
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: true,
